@@ -1,0 +1,31 @@
+--[[
+  	// watamelnKalashnikov
+  	// Sends Notification to specified admin level and up if a player is kicked
+--]]
+
+return function(Vargs)
+	local server, service = Vargs.Server, Vargs.Service
+
+	local Settings = server.Settings
+	local Commands = server.Commands
+	local Functions = server.Functions
+	local kickFunc = server.Commands.Kick.Function
+	
+	local AdminLevel:number = 100 --change 100 to admin levels for default values Players - 0, Moderators - 100, Admins - 200, HeadAdmins - 300, Creators - 900.
+	
+	server.Commands.Kick.Function = function(plr: Player, args: {string}, data)
+		for _, v: Player in ipairs(service.GetPlayers(plr, args[1])) do
+			for _, a: Player in ipairs(service.Players:GetPlayers()) do
+				if server.Admin.GetLevel(a) >= AdminLevel then
+					task.defer(server.Remote.MakeGui, a, "Moderation system", {
+						Title = "A player has been kicked",
+						Icon = server.MatIcons.Gavel,
+						Text = service.FormatPlayer(v).." has been kicked from the server.",
+						Time = 30
+					})
+				end
+			end
+		end
+		return kickFunc(plr, args, data)
+	end
+end

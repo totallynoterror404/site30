@@ -12,6 +12,8 @@ local clearance = {
 	["ScientistCard"] = true,
 	["JanitorCard"] = true
 	["CICard"] = true
+	["SrScientist"] = true
+	["GOC_Card"] = true 
 }
 
 

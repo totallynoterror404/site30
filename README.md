@@ -4,3 +4,6 @@ Parts of code from the staging game
 
 # Update notes:
 - Updated the cards script to support Sr. Scientist cards and GOC cards
+
+# Report bugs
+Please report bugs via our discord.

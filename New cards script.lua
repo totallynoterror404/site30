@@ -1,6 +1,6 @@
 -- Stable support (Version 1.0.0)
 -- This script is designed to work with the SCP:SL card system.
--- It now supports O5 cards, Facility Manager cards, Guard cards, MTF cards, Scientist cards, Janitor cards, and CI cards.
+-- It now supports O5 cards, Facility Manager cards, Guard cards, MTF cards, Scientist cards, Janitor cards, CI cards, Sr. Scientist cards and GOC cards.
 
 local tweenservice = game:GetService("TweenService")
 
